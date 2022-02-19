@@ -6,6 +6,7 @@ body {
   height: 100vh;
   position: relative;
   color: #293264;
+  overflow: hidden;
 }
 
 // intro screen
@@ -48,5 +49,12 @@ body {
 .questions-container{
   width: 80%;
   margin: 0 auto;
+  height: 80%;
 
+}
+
+.answers-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

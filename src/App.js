@@ -8,7 +8,7 @@ export default function App() {
   const [quiz, setQuiz] = React.useState([])
 
   React.useEffect(() => {
-    fetch("https://opentdb.com/api.php?amount=10&category=31")
+    fetch("https://opentdb.com/api.php?amount=5&category=31")
       .then(res => res.json())
         .then(data => setQuiz(data.results))
   }, [])
