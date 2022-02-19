@@ -1,0 +1,22 @@
+// intro page
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#f6f7fb;
+  height: 100vh;
+}
+.intro-container {
+  text-align: center;
+  color: #293264;
+  button {
+    margin-top: 20px;
+    padding: 15px;
+    width: 180px;
+    background-color: #4d5b9e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}
