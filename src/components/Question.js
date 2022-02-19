@@ -4,8 +4,8 @@ import he from 'he'
 export default function Question(props) {
 
   return (
-    <div>
-      {he.decode(props.question)}
+    <div className="question-container">
+      <h4>{he.decode(props.question)}</h4>
     </div>
   )
 }

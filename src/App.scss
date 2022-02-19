@@ -5,12 +5,12 @@ body {
   background-color:#f6f7fb;
   height: 100vh;
   position: relative;
+  color: #293264;
 }
 
-// intro page
+// intro screen
 .intro-container {
   text-align: center;
-  color: #293264;
   button {
     margin-top: 20px;
     padding: 15px;
@@ -41,4 +41,12 @@ body {
   border-radius: 50% 40% 60% 60%;
   width: 250px;
   height: 250px;
+}
+
+
+//question screen
+.questions-container{
+  width: 80%;
+  margin: 0 auto;
+
 }

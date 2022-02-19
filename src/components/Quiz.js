@@ -8,9 +8,9 @@ export default function Quiz(props) {
   })
 
   return (
-    <>
+    <div className="questions-container">
       <p>This is Quiz component</p>
       {questionArray}
-    </>
+    </div>
   )
 }
