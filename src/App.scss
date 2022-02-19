@@ -1,0 +1,44 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#f6f7fb;
+  height: 100vh;
+  position: relative;
+}
+
+// intro page
+.intro-container {
+  text-align: center;
+  color: #293264;
+  button {
+    margin-top: 20px;
+    padding: 15px;
+    width: 180px;
+    background-color: #4d5b9e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}
+
+.intro-yellow-circle{
+  position: absolute;
+  top: -120px;
+  right: -80px;
+  border-radius: 50% 90% 40% 80%;
+  background-color: #fffad0;
+  width: 250px;
+  height: 250px;
+}
+
+.intro-blue-circle{
+  position: absolute;
+  bottom: -100px;
+  left: -50px;
+  background-color: #ddebf8;
+  border-radius: 50% 40% 60% 60%;
+  width: 250px;
+  height: 250px;
+}
