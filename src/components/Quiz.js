@@ -1,9 +1,10 @@
 import React from "react"
+import Question from "./Question"
 
 export default function Quiz(props) {
   console.log(props.quizData)
   const questionArray = props.quizData.map(item => {
-    return <div>{item.question}</div>
+    return <Question question={item.question}/>
   })
 
   return (
