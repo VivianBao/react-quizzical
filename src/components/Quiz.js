@@ -4,7 +4,7 @@ import Question from "./Question"
 export default function Quiz(props) {
   console.log(props.quizData)
   const questionArray = props.quizData.map(item => {
-    return <Question question={item.question}/>
+    return <Question key={Math.random()} question={item.question}/>
   })
 
   return (

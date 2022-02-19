@@ -1,9 +1,11 @@
 import React from "react"
+import he from 'he'
 
 export default function Question(props) {
+
   return (
-    <>
-      <p>{props.question}</p>
-    </>
+    <div>
+      {he.decode(props.question)}
+    </div>
   )
 }
