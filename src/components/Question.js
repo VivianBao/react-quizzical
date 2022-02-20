@@ -1,6 +1,7 @@
 import React from "react"
 import he from 'he'
 import Answer from "./Answer"
+import { nanoid } from "nanoid"
 
 export default function Question(props) {
   console.log(props.incorrectAnswers)
@@ -8,7 +9,7 @@ export default function Question(props) {
   const allAnswers = [...props.incorrectAnswers, props.correctAnswer]
   console.log(`All answers: ${allAnswers}`)
   const answerElements = allAnswers.map(text => {
-    return <Answer text={text}/>
+    return <Answer key={nanoid()} text={text}/>
   })
   return (
     <div className="question-container">
