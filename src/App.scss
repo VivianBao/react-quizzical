@@ -12,6 +12,7 @@ body{
   position: relative;
   color: #293264;
   overflow: hidden;
+  z-index: -2;
 }
 
 // intro screen
@@ -54,7 +55,8 @@ body{
 .questions-container{
   min-width: 70%;
   margin: 0 auto;
-  height: 80%;
+  // height: 80%;
+  width: 75%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,8 +110,8 @@ body{
 
 .quiz-blue-circle{
   position: absolute;
-  bottom: -100px;
-  left: -200px;
+  bottom: -150px;
+  left: -100px;
   z-index: -1;
   background-color: #ddebf8;
   border-radius: 50% 90% 40% 60%;
