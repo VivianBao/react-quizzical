@@ -10,6 +10,7 @@ export default function Quiz(props) {
   return (
     <div className="questions-container">
       {questionArray}
+      <button className="check-answer-btn">Check Answer</button>
       <div className="quiz-yellow-circle"></div>
       <div className="quiz-blue-circle"></div>
     </div>

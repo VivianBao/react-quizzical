@@ -24,8 +24,10 @@ export default function App() {
   }
 
   return (
-    start === false ?
-    <Intro handleClickStart={handleClickStart}/> :
-    <Quiz quizData={quiz}/>
+    <div className="screen-container">
+      {start === false ?
+      <Intro handleClickStart={handleClickStart}/> :
+      <Quiz quizData={quiz}/>}
+    </div>
   )
 }
