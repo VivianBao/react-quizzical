@@ -85,9 +85,10 @@ export default function Quiz(props) {
       return temp
     })
   }
+  console.log(checked)
 
   const questionElements = questionSets.map(set => {
-    return <Question key={nanoid()} questionSet={set} handleOptionSelect={handleOptionSelect}/>
+    return <Question key={nanoid()} questionSet={set} handleOptionSelect={handleOptionSelect} checked={checked}/>
   })
   return (
     <div className="questions-container">
