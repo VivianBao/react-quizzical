@@ -21,11 +21,6 @@ body{
     margin-top: 20px;
     padding: 15px;
     width: 180px;
-    background-color: #4d5b9e;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
   }
 }
 
@@ -52,7 +47,7 @@ body{
 
 //question screen
 .questions-container{
-  min-width: 70%;
+  width: 60%;
   margin: 0 auto;
   // height: 80%;
   width: 75%;
@@ -86,17 +81,33 @@ body{
     z-index: 2;
   }
 }
-
-.check-answer-btn {
+button{
   border: none;
-  padding: 15px;
-  width: 250px;
   border-radius: 10px;
   background-color: #4d5b9e;
   color: white;
-  margin-top: 20px;
   font-size: 1rem;
+  cursor: pointer;
+}
+.check-answer-btn {
+  margin-top: 20px;
+  padding: 15px;
+  width: 250px;
   z-index: 2;
+}
+
+.restart-container{
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.1rem;
+  .restart-btn{
+    padding: 10px;
+    width: 250px;
+    margin-left: 10px;
+  }
 }
 
 .quiz-yellow-circle{
