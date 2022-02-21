@@ -7,15 +7,20 @@ export default function Question(props) {
   const [correctAnswer, setCorrectAnswer] = React.useState({
     text: `${props.correctAnswer}`,
     correct: true,
+    clicked: false
   })
+  const [incorrectAnswers, setIncorrectAnswers] = React.useState(settingIncorrectAnswers())
   const [allAnswers, setAllAnswers] = React.useState(settingAllAnswersArray())
 
+  function settingIncorrectAnswers(){
+    return props.incorrectAnswers.map(answer => ({
+      text: answer,
+      correct: false,
+      clicked: false
+    }))
+  }
 
   function settingAllAnswersArray(){
-    const incorrectAnswers = props.incorrectAnswers.map(answer => ({
-      text: answer,
-      correct: false
-    }))
     const answers = [...incorrectAnswers, correctAnswer]
     if(props.type === "boolean"){
       for(let i=0;i<2;i++){
@@ -32,7 +37,6 @@ export default function Question(props) {
           answers.splice(Math.floor(Math.random(4)), 0, myTarget)
         }
       }
-    console.log(answers)
     return answers
   }
 
