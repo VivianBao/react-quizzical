@@ -4,23 +4,21 @@ import Answer from "./Answer"
 import { nanoid } from "nanoid"
 
 export default function Question(props) {
-  const [correctAnswer, setCorrectAnswer] = React.useState({
-    text: `${props.correctAnswer}`,
-    correct: true,
-    clicked: false
-  })
-  const [incorrectAnswers, setIncorrectAnswers] = React.useState(settingIncorrectAnswers())
   const [allAnswers, setAllAnswers] = React.useState(settingAllAnswersArray())
 
-  function settingIncorrectAnswers(){
-    return props.incorrectAnswers.map(answer => ({
+  function settingAllAnswersArray(){
+    const correctAnswer = {
+      id: nanoid(),
+      text: `${props.correctAnswer}`,
+      correct: true,
+      selected: false
+    }
+    const incorrectAnswers = props.incorrectAnswers.map(answer => ({
+      id: nanoid(),
       text: answer,
       correct: false,
-      clicked: false
+      selected: false
     }))
-  }
-
-  function settingAllAnswersArray(){
     const answers = [...incorrectAnswers, correctAnswer]
     if(props.type === "boolean"){
       for(let i=0;i<2;i++){
@@ -40,8 +38,14 @@ export default function Question(props) {
     return answers
   }
 
+  function handleClick(id) {
+    const answers =[...incorrectAnswers, correctAnswer]
+
+
+  }
+
   const answerElements = allAnswers.map(answer => {
-    return <Answer key={nanoid()} text={answer.text} correct={answer.correct} />
+    return <Answer key={nanoid()} text={answer.text} correct={answer.correct} selected={answer.selected} handleClick={answer.id}/>
   })
 
   // const allAnswers = [...props.incorrectAnswers, props.correctAnswer]
