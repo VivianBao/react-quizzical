@@ -34,7 +34,7 @@ export default function Quiz(props) {
         for (let i = 0; i < 4; i++) {
           const myTarget = answers[i]
           answers.splice(i, 1)
-          answers.splice(Math.floor(Math.random(4)), 0, myTarget)
+          answers.splice(Math.floor(Math.random(4) * 4), 0, myTarget)
         }
       }
       return{
