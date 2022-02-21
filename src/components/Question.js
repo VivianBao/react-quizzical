@@ -48,18 +48,12 @@ export default function Question(props) {
         )
       }))
     })
-    console.log("clicked!")
-    console.log(allAnswers)
   }
 
   const answerElements = allAnswers.map(answer => {
     return <Answer key={nanoid()} text={answer.text} correct={answer.correct} selected={answer.selected} handleClick={()=>handleClick(answer.id)}/>
   })
 
-  // const allAnswers = [...props.incorrectAnswers, props.correctAnswer]
-  // const incorrectAnswerElements = props.incorrectAnswers.map(text => {
-  //   return <Answer key={nanoid()} text={text} correct={false}/>
-  // })
   return (
     <div className="question-container">
       <h4>{he.decode(props.question)}</h4>
