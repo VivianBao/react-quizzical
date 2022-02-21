@@ -5,6 +5,7 @@ import { nanoid } from 'nanoid'
 export default function Quiz(props) {
   const [checked, setChecked] = React.useState(false)
   const [questionSets, setQuestionSets] = React.useState(settingQuestionSets())
+  const [score, setScore] = React.useState(0)
 
   function settingQuestionSets() {
     const questions = props.quizData.map(set => {
@@ -46,27 +47,42 @@ export default function Quiz(props) {
     return questions
   }
 
-  function handleOptionSelect(answer_id) {
+  function handleOptionSelect(answer_id, question_id) {
     setQuestionSets(prevSets => {
       return(
         prevSets.map(prevSet => {
-          const newAnswers = prevSet.answers.map(prevAnswer => {
-            return (
-                prevAnswer.id === answer_id ?
-                { ...prevAnswer, selected: !prevAnswer.selected } :
-                { ...prevAnswer, selected: false }
-            )
-          })
-          return {...prevSet, answers: newAnswers}
+          if(prevSet.id === question_id){
+            const newAnswers = prevSet.answers.map(prevAnswer => {
+              return (
+                  prevAnswer.id === answer_id ?
+                  { ...prevAnswer, selected: !prevAnswer.selected} :
+                  { ...prevAnswer, selected: false }
+              )
+            })
+            return {...prevSet, answers: newAnswers}
+          } else {
+            return prevSet
+          }
         })
       )
     })
   }
+
   function handleCheck() {
     setChecked(prevChecked => {
       if(prevChecked === false){
         return !prevChecked
       }
+    })
+    setScore(prevNum => {
+      let temp = 0
+      for(let i=0; i < questionSets.length; i++){
+        const answersArray = questionSets[i]['answers']
+        for(let i=0; i<answersArray.length; i++){
+          if(answersArray[i]["correct"] && answersArray[i]['selected']){temp += 1}
+        }
+      }
+      return temp
     })
   }
 
@@ -77,7 +93,7 @@ export default function Quiz(props) {
     <div className="questions-container">
       {questionElements}
       {checked ?
-        <span>Your score is ___ <button className="check-answer-btn" onClick={props.handleClickStart}>Start New Game</button></span>:
+        <span>Your score is {score}/5 <button className="check-answer-btn" onClick={props.handleClickStart}>Start New Game</button></span>:
       <button className="check-answer-btn" onClick={handleCheck}>Check Answer</button>}
       <div className="quiz-yellow-circle"></div>
       <div className="quiz-blue-circle"></div>
