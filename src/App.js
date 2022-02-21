@@ -17,7 +17,7 @@ export default function App() {
     }
   }, [])
 
-  console.log(quiz)
+  // console.log(quiz)
 
   function handleClickStart(){
     return setStart(prevStart => !prevStart)
