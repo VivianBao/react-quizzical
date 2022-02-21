@@ -113,7 +113,7 @@ button{
 }
 
 .restart-container{
-  margin-top: 10px;
+  margin: 35px;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -121,7 +121,7 @@ button{
   font-size: 1.1rem;
   z-index: 3;
   .restart-btn{
-    padding: 10px;
+    padding: 15px 10px;
     width: 250px;
     margin-left: 10px;
   }
