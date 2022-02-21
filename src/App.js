@@ -11,6 +11,10 @@ export default function App() {
     fetch("https://opentdb.com/api.php?amount=5&category=31")
       .then(res => res.json())
         .then(data => setQuiz(data.results))
+    // Clean up function when quiz component finishes life cycle
+    return function(){
+      setQuiz([])
+    }
   }, [])
 
   console.log(quiz)
