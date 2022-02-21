@@ -39,13 +39,21 @@ export default function Question(props) {
   }
 
   function handleClick(id) {
-    const answers =[...incorrectAnswers, correctAnswer]
-
-
+    setAllAnswers(prevAnswers => {
+      return(prevAnswers.map(prevAnswer => {
+        return(
+          prevAnswer.id === id ?
+          {...prevAnswer,selected: !prevAnswer.selected}:
+          { ...prevAnswer, selected: false}
+        )
+      }))
+    })
+    console.log("clicked!")
+    console.log(allAnswers)
   }
 
   const answerElements = allAnswers.map(answer => {
-    return <Answer key={nanoid()} text={answer.text} correct={answer.correct} selected={answer.selected} handleClick={answer.id}/>
+    return <Answer key={nanoid()} text={answer.text} correct={answer.correct} selected={answer.selected} handleClick={()=>handleClick(answer.id)}/>
   })
 
   // const allAnswers = [...props.incorrectAnswers, props.correctAnswer]
