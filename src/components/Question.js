@@ -18,14 +18,21 @@ export default function Question(props) {
     }))
     const answers = [...incorrectAnswers, correctAnswer]
     if(props.type === "boolean"){
-      answers.map((answer,index) => {
-        return answer.text === 'False' ? index = 0 : index = index
-      })
-    } else {
-        answers.map((answer, index) => {
-          return index = Math.floor(Math.random(4))
-        })
+      for(let i=0;i<2;i++){
+        if(answers[i].text === "False"){
+          const falseOption = answers[i]
+          answers.splice(i, 1)
+          answers.unshift(falseOption)
+        }
       }
+    } else {
+        for(let i=0;i<4;i++){
+          const myTarget = answers[i]
+          answers.splice(i, 1)
+          answers.splice(Math.floor(Math.random(4)), 0, myTarget)
+        }
+      }
+    console.log(answers)
     return answers
   }
 
