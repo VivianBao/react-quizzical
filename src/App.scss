@@ -23,7 +23,7 @@ body{
   margin: 0 auto;
   position: relative;
   color: #293264;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 // intro screen
@@ -79,12 +79,12 @@ body{
   z-index: 2;
 }
 
-.two-answers-container{
+.two-answers-container, .four-answers-container{
   display: flex;
   justify-content: left;
   align-items: center;
 }
-.answer > span{
+.answer{
   font-size: 0.8rem;
   text-align: center;
   margin: 10px;
@@ -92,6 +92,9 @@ body{
   border-radius: 12px;
   cursor: pointer;
   z-index: 2;
+  span{
+
+  }
 }
 button{
   border: none;
@@ -102,7 +105,8 @@ button{
   cursor: pointer;
 }
 .check-answer-btn {
-  margin-top: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
   padding: 15px;
   width: 250px;
   z-index: 2;
@@ -147,6 +151,9 @@ button{
 
 
 @media only screen and (max-width: 600px) {
+  .quiz-screen-container{
+    overflow: scroll;
+  }
   .questions-container{
     margin-top: 50px;
     height: 100%;
@@ -181,5 +188,14 @@ button{
     position: absolute;
     bottom: -200px;
     left: -180px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .questions-container{
+    margin: 50px auto;
+  }
+  .check-answer-btn{
+    margin-top: 25px;
   }
 }
