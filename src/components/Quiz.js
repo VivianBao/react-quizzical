@@ -62,13 +62,13 @@ export default function Quiz(props) {
       )
     })
   }
-  // function handleCheck() {
-  //   setChecked(prevChecked => {
-  //     if(prevChecked === false){
-  //       return
-  //     }
-  //   })
-  // }
+  function handleCheck() {
+    setChecked(prevChecked => {
+      if(prevChecked === false){
+        return !prevChecked
+      }
+    })
+  }
 
   const questionElements = questionSets.map(set => {
     return <Question key={nanoid()} questionSet={set} handleOptionSelect={handleOptionSelect}/>
@@ -76,7 +76,9 @@ export default function Quiz(props) {
   return (
     <div className="questions-container">
       {questionElements}
-      <button className="check-answer-btn">Check Answer</button>
+      {checked ?
+        <span>Your score is ___ <button className="check-answer-btn" onClick={props.handleClickStart}>Start New Game</button></span>:
+      <button className="check-answer-btn" onClick={handleCheck}>Check Answer</button>}
       <div className="quiz-yellow-circle"></div>
       <div className="quiz-blue-circle"></div>
     </div>

@@ -27,7 +27,7 @@ export default function App() {
     <div className="screen-container">
       {start === false ?
       <Intro handleClickStart={handleClickStart}/> :
-      <Quiz quizData={quiz}/>}
+        <Quiz quizData={quiz} handleClickStart={handleClickStart}/>}
     </div>
   )
 }
