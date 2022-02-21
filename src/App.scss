@@ -12,7 +12,6 @@ body{
   position: relative;
   color: #293264;
   overflow: hidden;
-  z-index: -2;
 }
 
 // intro screen
@@ -70,6 +69,7 @@ body{
   width: 100%;
   padding: 10px;
   border-bottom: solid 1px #d6dbf5;
+  z-index: 2;
 }
 
 .answers-container {
@@ -83,6 +83,7 @@ body{
     padding: 8px 20px;
     border-radius: 12px;
     cursor: pointer;
+    z-index: 2;
   }
 }
 
@@ -95,13 +96,14 @@ body{
   color: white;
   margin-top: 20px;
   font-size: 1rem;
+  z-index: 2;
 }
 
 .quiz-yellow-circle{
   position: absolute;
   top: -120px;
   right: -150px;
-  z-index: -1;
+  // z-index: -1;
   border-radius: 50% 60% 10% 90%;
   background-color: #fffad0;
   width: 250px;
@@ -112,7 +114,7 @@ body{
   position: absolute;
   bottom: -150px;
   left: -100px;
-  z-index: -1;
+  z-index: 1;
   background-color: #ddebf8;
   border-radius: 50% 90% 40% 60%;
   width: 250px;
