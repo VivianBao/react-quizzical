@@ -19,11 +19,10 @@ export default function Answer(props) {
       return { color: "#8f95af", border: "solid 1px #8f95af"}
     }
   }
-  console.log(props.checked)
 
   return (
     <div className="answer" onClick={props.handleClick} style={props.checked ? checkedStyle() : style}>
-      {he.decode(props.text)}
+      <span>{he.decode(props.text)}</span>
     </div>
   )
 }

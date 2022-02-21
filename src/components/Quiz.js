@@ -91,13 +91,15 @@ export default function Quiz(props) {
     return <Question key={nanoid()} questionSet={set} handleOptionSelect={handleOptionSelect} checked={checked}/>
   })
   return (
-    <div className="questions-container">
-      {questionElements}
-      {checked ?
-        <span className="restart-container">Your score is {score} / 5 <button className="restart-btn" onClick={props.handleClickStart}>Start New Game</button></span>:
-      <button className="check-answer-btn" onClick={handleCheck}>Check Answer</button>}
-      <div className="quiz-yellow-circle"></div>
-      <div className="quiz-blue-circle"></div>
-    </div>
+    <div className="quiz-screen-container">
+      <div className="questions-container">
+        {questionElements}
+        {checked ?
+          <span className="restart-container">Your score is {score} / 5 <button className="restart-btn" onClick={props.handleClickStart}>Start New Game</button></span>:
+          <button className="check-answer-btn" onClick={handleCheck}>Check Answer</button>}
+        <div className="quiz-yellow-circle"></div>
+        <div className="quiz-blue-circle"></div>
+      </div>
+    </div >
   )
 }

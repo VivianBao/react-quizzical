@@ -2,7 +2,19 @@ body{
   margin: 0;
 }
 
-.screen-container {
+.intro-screen-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#f6f7fb;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  color: #293264;
+  overflow: hidden;
+}
+
+.quiz-screen-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,18 +79,21 @@ body{
   z-index: 2;
 }
 
-.answers-container {
+.two-answers-container, .four-answers-container{
   display: flex;
   justify-content: left;
   align-items: center;
-  .answer{
-    font-size: 0.8rem;
-    text-align: center;
-    margin: 10px;
-    padding: 8px 20px;
-    border-radius: 12px;
-    cursor: pointer;
-    z-index: 2;
+}
+.answer{
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 10px;
+  padding: 8px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  z-index: 2;
+  span{
+
   }
 }
 button{
@@ -90,21 +105,23 @@ button{
   cursor: pointer;
 }
 .check-answer-btn {
-  margin-top: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
   padding: 15px;
   width: 250px;
   z-index: 2;
 }
 
 .restart-container{
-  margin-top: 10px;
+  margin: 35px;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   font-size: 1.1rem;
+  z-index: 3;
   .restart-btn{
-    padding: 10px;
+    padding: 15px 10px;
     width: 250px;
     margin-left: 10px;
   }
@@ -130,4 +147,55 @@ button{
   border-radius: 50% 90% 40% 60%;
   width: 250px;
   height: 250px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .quiz-screen-container{
+    overflow: scroll;
+  }
+  .questions-container{
+    margin-top: 50px;
+    height: 100%;
+  }
+
+  .question-container{
+    h4{
+      font-size: 0.9rem;
+    }
+    .four-answers-container {
+      display: grid;
+      grid-template: 1fr 1fr/1fr 1fr;
+    }
+    .two-answers-container {
+      display: grid;
+      grid-template: 1fr/1fr 1fr;
+    }
+    .answer{
+      font-size: 0.8rem;
+      text-align: center;
+      margin: 10px;
+      padding: 2px;
+      border-radius: 12px;
+      cursor: pointer;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .quiz-blue-circle{
+    position: absolute;
+    bottom: -200px;
+    left: -180px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .questions-container{
+    margin: 50px auto;
+  }
+  .check-answer-btn{
+    margin-top: 25px;
+  }
 }
