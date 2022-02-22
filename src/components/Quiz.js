@@ -95,7 +95,7 @@ export default function Quiz(props) {
       <div className="questions-container">
         {questionElements}
         {checked ?
-          <span className="restart-container">Your score is {score} / 5 <button className="restart-btn" onClick={props.handleClickStart}>Start New Game</button></span>:
+          <span className="restart-container"><strong>You scored {score} / 5 correct answers</strong><button className="restart-btn" onClick={props.handleClickStart}>Start New Game</button></span>:
           <button className="check-answer-btn" onClick={handleCheck}>Check Answer</button>}
         <div className="quiz-yellow-circle"></div>
         <div className="quiz-blue-circle"></div>
