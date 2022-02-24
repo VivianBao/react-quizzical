@@ -1,3 +1,7 @@
+# 📝 Quizzical
+
+A fun practice web app built with React.js that test your knowledge about all-time-favorite anime!
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
