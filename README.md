@@ -1,6 +1,7 @@
 # 📝 Quizzical
 
 A fun practice web app built with React.js that test your knowledge about all-time-favorite anime!
+Visit [site](https://quizzical-anime.herokuapp.com/)
 
 # Getting Started with Create React App
 
